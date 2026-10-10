@@ -1,0 +1,84 @@
+{
+  "dataset": "CoAID COVID-19 NewsFakeCOVID-19 + NewsRealCOVID-19",
+  "seed": 42,
+  "raw_rows": 5457,
+  "after_text_nonempty": 5457,
+  "after_exact_dedup_and_anomaly_removal": 5388,
+  "train_rows": 4310,
+  "validation_rows": 539,
+  "test_rows": 539,
+  "class_counts": {
+    "0": 4478,
+    "1": 910
+  },
+  "test_accuracy": 0.9461966604823747,
+  "test_macro_f1": 0.9092197345877979,
+  "test_macro_precision": 0.8898430592396109,
+  "test_macro_recall": 0.932606456043956,
+  "test_roc_auc": 0.9796408948194664,
+  "classification_report": {
+    "accurate": {
+      "precision": 0.9816091954022989,
+      "recall": 0.953125,
+      "f1-score": 0.9671574178935447,
+      "support": 448.0
+    },
+    "misinformation": {
+      "precision": 0.7980769230769231,
+      "recall": 0.9120879120879121,
+      "f1-score": 0.8512820512820513,
+      "support": 91.0
+    },
+    "accuracy": 0.9461966604823747,
+    "macro avg": {
+      "precision": 0.8898430592396109,
+      "recall": 0.932606456043956,
+      "f1-score": 0.9092197345877979,
+      "support": 539.0
+    },
+    "weighted avg": {
+      "precision": 0.9506232273473653,
+      "recall": 0.9461966604823747,
+      "f1-score": 0.947594044309786,
+      "support": 539.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      427,
+      21
+    ],
+    [
+      8,
+      83
+    ]
+  ],
+  "date_min_available": "2020-01-06 09:50:00+00:00",
+  "date_max_available": "2020-11-03 02:00:00+00:00",
+  "available_date_rows": 181,
+  "excluded_pre2020_anomalies": 3,
+  "excluded_anomalies": [
+    {
+      "label": 1,
+      "title": "If Queen Elizabeth II tested positive for coronavirus.",
+      "publish_date": "2018-12-27T13:54:00+00:00",
+      "source_file": "NewsFakeCOVID-19(1).csv"
+    },
+    {
+      "label": 1,
+      "title": "Walmart is closing hundreds of its stores.",
+      "publish_date": "2016-01-15T18:39:00Z",
+      "source_file": "NewsFakeCOVID-19(1).csv"
+    },
+    {
+      "label": 1,
+      "title": "Pope Francis and two aides tested positive for coronavirus.",
+      "publish_date": "2019-02-19T16:35:00+00:00",
+      "source_file": "NewsFakeCOVID-19(1).csv"
+    }
+  ],
+  "text_fields": "title + abstract + content",
+  "vectorizer": "TF-IDF word unigrams+bigrams, max_features=50000, sublinear_tf=True",
+  "classifier": "LogisticRegression(class_weight=balanced, C=1.0, max_iter=2000)",
+  "production_training": "train + validation; test held out for final evaluation"
+}

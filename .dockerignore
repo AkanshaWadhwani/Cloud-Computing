@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.git/
+.env
+.vscode/
+.pytest_cache/
+03_PROCESSED_DATASET/
+04_DOCUMENTATION/
+05_API_TESTS/
+*.md

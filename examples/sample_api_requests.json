@@ -1,0 +1,12 @@
+{
+  "health": {
+    "method": "GET",
+    "path": "/health"
+  },
+  "prediction": {
+    "method": "POST",
+    "path": "/predict",
+    "headers": {"X-API-Key": "YOUR_API_KEY"},
+    "body": {"text": "Vaccines contain microchips to track your location."}
+  }
+}
